@@ -5,3 +5,4 @@ export default function Cart({ text }) {
         </div>
     );
 }
+

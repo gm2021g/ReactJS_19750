@@ -1,0 +1,24 @@
+#grillaMenu {
+      display: grid;
+
+      grid-template-columns: max-content;
+      grid-template-rows: 100%;
+      grid-template-areas: "areaUno areaDos areaTres";
+      justify-items:center;
+      align-items: center;
+      background-image: linear-gradient(to left, #d0914e, wheat); 
+      padding: 0.5% 0.5% 0.5% 0.5%;
+}
+      
+.logoImg {
+      border-radius: 0.5rem;
+      width: 8rem; 
+      height: 8rem;
+}
+
+.titulo {
+      color:black;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 2rem;
+}
+

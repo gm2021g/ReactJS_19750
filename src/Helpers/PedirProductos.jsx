@@ -1,11 +1,10 @@
 import { productos } from "../datos/productos"
 
-
-export const PedirProductos = () => {
+export const pedirProductos = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(productos);
-        }, 2000)
+        }, 1000)
 
     })
 }

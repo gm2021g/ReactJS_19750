@@ -1,3 +1,11 @@
+Este proyecto se trata de web page de una Obra Social para mascotas, el cual estoy desarrollando desde los cursos de Diseño web y JS. 
+Consta de varios módulos: 
+- Una sección principal o Home.
+- Una sección con los distintos planes que ofrece la Obra Social.
+- Una sección con productos que la Obra Social ofrece a sus socios con descuentos especiales, donde se incluye carrito de compras.
+- Una sección de contacto.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

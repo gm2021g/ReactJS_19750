@@ -1,9 +1,11 @@
-import { Button } from '../Buttons/Button';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import TituloNavBar from '../Títulos/TituloNavBar';
 import Cart from './Cart';
 import Logo from './Logo';
 import './NavBar.css';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+
 
 export default function NavBar() {
 
@@ -11,31 +13,36 @@ export default function NavBar() {
         <>
             <section id="grillaMenu">
                 <div id="areaUno">
-                    <Logo logo='images/LogoOSTMA.jpg' />
+                    <Logo logo='../images/LogoOSTMA.jpg' />
                 </div>
 
-                <div class="areaDos">
+                <div className="areaDos">
                     <div><TituloNavBar /></div>
                     <Navbar>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="me-auto" >
-                                <Nav.Link href="#Alimentos">Home</Nav.Link>
-                                <Nav.Link href="#Accesorios">Planes</Nav.Link>
+                            <Nav className="mr-auto my-2 my-lg-1"
+                                style={{ maxHeight: '100px' }}
+                            >
+
+                                <Nav.Link> <NavLink ClassName={"mr-auto my-2 my-lg-1"} activeClassName={'activeLink'} exact to="/" > Home </NavLink> </Nav.Link>
+                                <Nav.Link> <NavLink activeClassName={'activeLink'} exact to="/planes"> Planes </NavLink> </Nav.Link>
                                 <NavDropdown title="Productos" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Medicamentos</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Higiene</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Accesorios</NavDropdown.Item>
+                                    <NavDropdown.Item> <NavLink activeClassName={'activeLink'} exact to="/productos/medicamentos"> Medicamentos </NavLink> </NavDropdown.Item>
+                                    <NavDropdown.Item> <NavLink activeClassName={'activeLink'} exact to="/productos/higiene"> Higiene </NavLink> </NavDropdown.Item>
+                                    <NavDropdown.Item> <NavLink activeClassName={'activeLink'} exact to="/productos/accesorios"> Accesorios </NavLink> </NavDropdown.Item>
+                                    <NavDropdown.Item> <NavLink activeClassName={'activeLink'} exact to="/productos/todos"> Todos </NavLink> </NavDropdown.Item>
                                 </NavDropdown>
 
-                                <Nav.Link href="#Medicamentos">Contacto</Nav.Link>
+                                <Nav.Link> <NavLink activeClassName={'activeLink'} exact to="/contacto"> Contacto </NavLink> </Nav.Link>
+
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
                 </div>
 
-                <div class="areaTres">
-                    <Cart text='images/cart.jpg' />
+                <div className="areaTres">
+                    <Link exact to="/carrito"> <Cart text='../images/cart.jpg' /> </Link>
                 </div>
             </section>
         </>

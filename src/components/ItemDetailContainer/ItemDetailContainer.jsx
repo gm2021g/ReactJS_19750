@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { pedirProductos } from '../../Helpers/pedirProductos'
 import { useParams } from 'react-router'
 import { ItemDetail } from './ItemDetail'
+import { UIContext } from '../../context/UIContext'
 
 export const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(false)
+    // const [loading, setLoading] = useState(false)
+
+    const { loading, setLoading } = useContext(UIContext)
 
     const { itemId } = useParams()
 

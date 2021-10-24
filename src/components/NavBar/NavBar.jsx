@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import TituloNavBar from '../Títulos/TituloNavBar';
-import Cart from './Cart';
+import { Cart } from './Cart';
 import Logo from './Logo';
 import './NavBar.css';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
@@ -13,7 +13,7 @@ export default function NavBar() {
         <>
             <section id="grillaMenu">
                 <div id="areaUno">
-                    <Logo logo='../images/LogoOSTMA.jpg' />
+                    <Link exact to="/"> <Logo logo='../images/LogoOSTMA.jpg' />  </Link>
                 </div>
 
                 <div className="areaDos">

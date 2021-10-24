@@ -8,47 +8,58 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom'
-
+import { CartVista } from './components/CartVista/CartVista';
+import { CartProvider } from './context/CartContext';
+import { UIProvider } from './context/UIContext';
+import { Home } from './components/Buttons/Secciones/Home';
 
 function App() {
+
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
 
-        <Switch>
-          <Route exact path="/" >
-            <h1> Home </h1>
-          </Route>
+      <UIProvider>
+        <CartProvider>
 
-          <Route exact path="/planes" >
-            <h1> Planes </h1>
-          </Route >
+          <BrowserRouter>
+            <NavBar />
 
-          <Route exact path="/productos/:categoryId" >
-            <ItemListContainer />
-          </Route >
+            <Switch>
+              <Route exact path="/" >
+                <Home />
+              </Route>
 
-          <Route exact path="/detalle/:itemId" >
-            <ItemDetailContainer />
-          </Route >
+              <Route exact path="/planes" >
+                <h1> Planes </h1>
+              </Route >
 
-          <Route exact path="/contacto" >
-            <h1> Contacto </h1>
-          </Route >
+              <Route exact path="/productos/:categoryId" >
+                <ItemListContainer />
+              </Route >
 
-          <Route exact path="/carrito" >
-            <h1> Carrito </h1>
-          </Route >
+              <Route exact path="/detalle/:itemId" >
+                <ItemDetailContainer />
+              </Route >
 
-          <Route path="*" >
-            <Redirect to="/" />
-          </Route >
+              <Route exact path="/contacto" >
+                <h1> Contacto </h1>
+              </Route >
 
-        </Switch>
+              <Route exact path="/carrito" >
+                <CartVista />
+              </Route >
 
-      </BrowserRouter>
+              <Route path="*" >
+                <Redirect to="/" />
+              </Route >
 
+            </Switch>
+
+          </BrowserRouter>
+
+
+        </CartProvider>
+      </UIProvider>
     </>
   );
 }

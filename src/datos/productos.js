@@ -6,7 +6,8 @@ export const productos = [
         marca: "Total Full",
         descripcion: "Antiparasitario Interno Perros Y Gatos - 15 Cc",
         precio: 490,
-        imagen: "../images/382117.jpg"
+        imagen: "../images/382117.jpg",
+        stock: 20
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ export const productos = [
         marca: "Bactrovet",
         descripcion: "Curabichera Plata AM Pet 250cc",
         precio: 385,
-        imagen: "../images/338018.jpg"
+        imagen: "../images/338018.jpg",
+        stock: 10
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ export const productos = [
         marca: "Meltra",
         descripcion: "Antiparasitario Perro/Gato Suspens. Cachorro 15 Ml",
         precio: 950,
-        imagen: "../images/361043.jpg"
+        imagen: "../images/361043.jpg",
+        stock: 5
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ export const productos = [
         marca: "Feline",
         descripcion: "Antiparasitario Endospot",
         precio: 800,
-        imagen: "../images/354252.jpg"
+        imagen: "../images/354252.jpg",
+        stock: 20
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ export const productos = [
         marca: "Frontline Plus",
         descripcion: "Pipeta Perro 2-10 kg",
         precio: 855,
-        imagen: "../images/373011.png"
+        imagen: "../images/373011.png",
+        stock: 15
     },
     {
         id: 6,
@@ -51,7 +56,8 @@ export const productos = [
         marca: "Power",
         descripcion: "Pipeta Perro 2-4 kg",
         precio: 295,
-        imagen: "../images/302220.jpg"
+        imagen: "../images/302220.jpg",
+        stock: 5
     },
     {
         id: 7,
@@ -60,7 +66,8 @@ export const productos = [
         marca: "Ecthol",
         descripcion: "Collar Antipulgas Para Gato",
         precio: 740,
-        imagen: "../images/332003.png"
+        imagen: "../images/332003.png",
+        stock: 10
     },
     {
         id: 8,
@@ -69,7 +76,8 @@ export const productos = [
         marca: "Porta",
         descripcion: "Bloque Vitaminico Mineral para Aves",
         precio: 300,
-        imagen: "../images/135012.jpg"
+        imagen: "../images/135012.jpg",
+        stock: 6
     },
     {
         id: 9,
@@ -78,7 +86,8 @@ export const productos = [
         marca: "Porta",
         descripcion: "Protector contra Piojos para Aves - 12gr",
         precio: 1500,
-        imagen: "../images/135013.jpg"
+        imagen: "../images/135013.jpg",
+        stock: 8
     },
     {
         id: 10,
@@ -87,7 +96,8 @@ export const productos = [
         marca: "Seresto",
         descripcion: "Collar contra Pulgas y Garrapatas Perros y Gatos Hasta 8KG",
         precio: 3470,
-        imagen: "../images/132000.jpg"
+        imagen: "../images/132000.jpg",
+        stock: 20
     },
     {
         id: 11,
@@ -96,7 +106,9 @@ export const productos = [
         marca: "Porvet",
         descripcion: "Limpia oidos Perros y Gatos 100cc",
         precio: 570,
-        imagen: "../images/235114.png"
+        imagen: "../images/235114.png",
+        stock: 12
+
     },
     {
         id: 12,
@@ -105,7 +117,8 @@ export const productos = [
         marca: "Lab Love Sudamericana",
         descripcion: "Antibacterial Perro con Esteroides 10 Cc",
         precio: 805,
-        imagen: "../images/352012.jpg"
+        imagen: "../images/352012.jpg",
+        stock: 10
     },
     {
         id: 13,
@@ -114,7 +127,8 @@ export const productos = [
         marca: "Osspret",
         descripcion: "Shampoo Pulguicida Garrapaticida Tradicional Perros y Gatos 250 Cc",
         precio: 780,
-        imagen: "../images/1254233.jpg"
+        imagen: "../images/1254233.jpg",
+        stock: 8
     },
     {
         id: 14,
@@ -123,7 +137,8 @@ export const productos = [
         marca: "Paul",
         descripcion: "Espuma Seca En Aerosol 250 Cc",
         precio: 1220,
-        imagen: "../images/335030.jpg"
+        imagen: "../images/335030.jpg",
+        stock: 20
     },
     {
         id: 15,
@@ -132,7 +147,8 @@ export const productos = [
         marca: "Lab Love Sudamericana",
         descripcion: "Shampoo Perro Porta Cachorro Hipoalergenico 500 Ml",
         precio: 805,
-        imagen: "../images/335159.jpg"
+        imagen: "../images/335159.jpg",
+        stock: 40
     },
     {
         id: 16,
@@ -141,7 +157,8 @@ export const productos = [
         marca: "MasKota",
         descripcion: "Shampoo 2 En 1 Antifrizz Brillo Y Docilidad Perro 300 Ml",
         precio: 650,
-        imagen: "../images/240260.png"
+        imagen: "../images/240260.png",
+        stock: 10
     },
     {
         id: 17,
@@ -150,7 +167,8 @@ export const productos = [
         marca: "Osspret",
         descripcion: "Shampoo Bactericida con Clorhexidina 250 cc",
         precio: 760,
-        imagen: "../images/366192.jpg"
+        imagen: "../images/366192.jpg",
+        stock: 20
     },
     {
         id: 18,
@@ -159,7 +177,8 @@ export const productos = [
         marca: "Moksha",
         descripcion: "Shampoo Antialergico Caninos Y Felinos 250 Cc",
         precio: 675,
-        imagen: "../images/371045.jpg"
+        imagen: "../images/371045.jpg",
+        stock: 15
     },
     {
         id: 19,
@@ -168,7 +187,8 @@ export const productos = [
         marca: "Moksha",
         descripcion: "Shampoo Analergenico Para Cachorros 250 Cc",
         precio: 480,
-        imagen: "../images/371044.jpg"
+        imagen: "../images/371044.jpg",
+        stock: 2
     },
     {
         id: 20,
@@ -177,7 +197,8 @@ export const productos = [
         marca: "Osspret",
         descripcion: "Shampoo Antimicótico 250 Cc",
         precio: 1120,
-        imagen: "../images/4554344.jpg"
+        imagen: "../images/4554344.jpg",
+        stock: 9
     },
     {
         id: 21,
@@ -186,7 +207,8 @@ export const productos = [
         marca: "Wepets",
         descripcion: "Moises Classic Grafito Medio",
         precio: 4500,
-        imagen: "../images/244104.png"
+        imagen: "../images/244104.png",
+        stock: 3
     },
     {
         id: 22,
@@ -195,7 +217,8 @@ export const productos = [
         marca: "Cocooning",
         descripcion: "Cama Emir Redonda Marron Chocolate Talle Único",
         precio: 5300,
-        imagen: "../images/248039.jpg"
+        imagen: "../images/248039.jpg",
+        stock: 15
     },
     {
         id: 23,
@@ -204,7 +227,8 @@ export const productos = [
         marca: "Wepets",
         descripcion: "Moises Redondo Tropical Talle Único",
         precio: 6540,
-        imagen: "../images/422331.jpg"
+        imagen: "../images/422331.jpg",
+        stock: 20
     },
     {
         id: 24,
@@ -213,7 +237,8 @@ export const productos = [
         marca: "Lazy Dog",
         descripcion: "Comedero Inoxidable Doble Kitty Único",
         precio: 1320,
-        imagen: "../images/239275.jpg"
+        imagen: "../images/239275.jpg",
+        stock: 7
     },
     {
         id: 25,
@@ -222,7 +247,8 @@ export const productos = [
         marca: "Stefanplast",
         descripcion: "Bebedero Automático Break Pequeño",
         precio: 2170,
-        imagen: "../images/766587.jpg"
+        imagen: "../images/766587.jpg",
+        stock: 5
     },
     {
         id: 26,
@@ -231,7 +257,8 @@ export const productos = [
         marca: "Azimut",
         descripcion: "Dispenser Automatico Para Perros Y Gatos - 0,6 L",
         precio: 980,
-        imagen: "../images/249170-01.jpg"
+        imagen: "../images/249170-01.jpg",
+        stock: 3
     },
     {
         id: 27,
@@ -240,7 +267,8 @@ export const productos = [
         marca: "Pawise",
         descripcion: "Litera Para Hamsters Mediano Chico",
         precio: 1290,
-        imagen: "../images/237353.png"
+        imagen: "../images/237353.png",
+        stock: 6
     },
     {
         id: 28,
@@ -249,7 +277,8 @@ export const productos = [
         marca: "Seachem",
         descripcion: "Suplemento Flourish Potassium para pecera 100Ml",
         precio: 1120,
-        imagen: "../images/227011.jpg"
+        imagen: "../images/227011.jpg",
+        stock: 12
     },
     {
         id: 29,
@@ -258,7 +287,8 @@ export const productos = [
         marca: "Millex",
         descripcion: "Bebedero para medicamentos Aves Unico",
         precio: 100,
-        imagen: "../images/238125.jpg"
+        imagen: "../images/238125.jpg",
+        stock: 2
     },
     {
         id: 30,
@@ -267,6 +297,7 @@ export const productos = [
         marca: "Exo Terra",
         descripcion: "Porta Lamparas Compact Top Para Terrarios XL",
         precio: 1316,
-        imagen: "../images/253005-01.jpg"
+        imagen: "../images/253005-01.jpg",
+        stock: 6
     }
 ]

@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+import Card from 'react-bootstrap/Card'
+import './CartVista.css';
 
 export const CartVista = () => {
     const { carrito, vaciarCarrito, removeItem, calcularTotal } = useContext(CartContext)
@@ -12,34 +14,63 @@ export const CartVista = () => {
                     ? <>
 
                         <h2>No hay productos en el Carrito</h2>
-                        <Link to="/productos/todos" className="btn btn-success"> Ver Productos </Link>
+                        <Link to="/productos/todos" className="btn btn-success"> Ir a Productos </Link>
                     </>
                     :
                     <>
-                        <h2> Productos de mi Carrito </h2>
-                        <hr />
-                        {
-                            carrito.map((prod) => (
-                                <div>
-                                    <h4>{prod.nombre}</h4>
-                                    <p>Cantidad: {prod.cantidad}</p>
-                                    <p>Precio unitario: {prod.precio} </p>
-                                    <p>Precio Total: {prod.precio * prod.cantidad}</p>
-                                    <button className="btn btn-danger" onClick={() => removeItem(prod.id)} >
-                                        Eliminar Producto
-                                    </button>
-                                </div>
-                            ))
+
+                        <h2> Carrito de Compras </h2>
+
+                        <Card border="warning" style={{ width: '50rem' }}>
+                            <Card.Body>
+                                <Card.Text>
+
+                                    {
+                                        carrito.map((prod) => (
+                                            <div>
+                                                <Card.Header className="cardHeader">  {prod.nombre}  </Card.Header>
+                                                <br />
+
+                                                <Card.Img variant="top" className="cardImagen" src={prod.imagen} />
+                                                <br />
+
+                                                <p>Precio unitario: $ {prod.precio} </p>
+                                                <p>Cantidad: {prod.cantidad}</p>
+
+                                                <Card.Subtitle className="cardPrecio my-4" >Precio Total: $ {prod.precio * prod.cantidad}</Card.Subtitle>
+
+                                                <Card.Link href="#" onClick={() => removeItem(prod.id)} className="cardEliminar" >
+                                                    Eliminar Producto
+                                                </Card.Link>
+                                                <br /><br />
+                                            </div>
+                                        ))
+                                    }
+
+                                    <hr />
+                                    <div>
+                                        <h3 className="my-2"> Importe Total: $ {calcularTotal()} </h3>
+                                        <button className="btn btn-danger my-2 mx-3" onClick={vaciarCarrito}>
+                                            Vaciar Carrito
+                                        </button>
+
+                                        <button className="btn btn-warning my-2 mx-3" >
+                                            Ir a Pagar
+                                        </button>
 
 
-                        }
-                        <hr />
-                        <h3 className="my-3"> Importe Total: $ {calcularTotal()} </h3>
-                        <button className="btn btn-danger"
-                            onClick={vaciarCarrito}> Vaciar Carrito</button>
+                                        <Link className="btn btn-success my-2 mx-3" to="/productos/todos">
+                                            Seguir comprando
+                                        </Link>
+                                    </div>
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                        <br />
                     </>
-
             }
         </div >
     )
 }
+
+

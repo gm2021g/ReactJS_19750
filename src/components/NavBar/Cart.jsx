@@ -6,9 +6,9 @@ export const Cart = ({ text }) => {
     const { calcularCantidad } = useContext(CartContext)
 
     return (
-        <div >
+        <div>
             <img src={text} alt="Carrito" />
-            <span>  {calcularCantidad()}  </span>
+            <span className="cantidad"> {calcularCantidad()} </span>
         </div>
     )
 }

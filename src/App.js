@@ -11,7 +11,7 @@ import {
 import { CartVista } from './components/CartVista/CartVista';
 import { CartProvider } from './context/CartContext';
 import { UIProvider } from './context/UIContext';
-import { Home } from './components/Buttons/Secciones/Home';
+import { Home } from './components/Secciones/Home';
 
 function App() {
 

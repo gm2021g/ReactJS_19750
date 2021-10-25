@@ -37,7 +37,13 @@ export const ItemDetail = ({ id, nombre, precio, imagen, descripcion, marca, tip
             </Card.Body>
 
             {isInCart(id)
-                ? <Link to="/carrito" className="btn btn-success" style={{ width: '20rem' }}> Terminar la compra </Link>
+                ?
+                <>
+                    <div style={{ padding: '1rem' }} >
+                        <p style={{ fontSize: '1.5rem', color: 'orange' }}> <b> ¡ Producto agregado al carrito ! </b> </p>
+                        <Link to="/carrito" className="btn btn-warning"> Terminar la compra </Link>
+                    </div>
+                </>
                 :
                 <>
                     <ItemCount cantidad={cantidad} modify={setCantidad} maximo={stock} />
@@ -45,19 +51,15 @@ export const ItemDetail = ({ id, nombre, precio, imagen, descripcion, marca, tip
                         className="btn btn-success my-2"
                         onClick={handleAgregar}
                     >
-                        Agregar
+                        Agregar al Carrito
                     </button>
                 </>
             }
 
-
             <div style={{ padding: '1rem' }} >
-                <Button variant="warning"><b>Comprar</b></Button>
-            </div>
-            <div style={{ padding: '1rem' }} >
-                <Button onClick={() => goBack()} variant="secondary" >  Volver </Button>
+                <button onClick={() => goBack()} variant="secondary" >  Volver </button>
                 {' '}
-                <Button onClick={() => push("/")} variant="secondary" >  Ir al Home </Button>
+                <button onClick={() => push("/")} variant="secondary" >  Ir al Home </button>
             </div>
         </Card>
     )

@@ -1,6 +1,5 @@
 #grillaMenu {
       display: grid;
-
       grid-template-columns: max-content;
       grid-template-rows: 100%;
       grid-template-areas: "areaUno areaDos areaTres";
@@ -35,4 +34,11 @@
       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       font-size: 1.2rem;
 
+  }
+
+  .cantidad { 
+     font-weight: bolder;
+     font-size: 1.5rem;
+     color: white;
+     
   }

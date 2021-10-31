@@ -12,6 +12,7 @@ import { CartVista } from './components/CartVista/CartVista';
 import { CartProvider } from './context/CartContext';
 import { UIProvider } from './context/UIContext';
 import { Home } from './components/Secciones/Home';
+import { Contacto } from './components/Secciones/Contacto';
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
               </Route >
 
               <Route exact path="/contacto" >
-                <h1> Contacto </h1>
+                <Contacto />
               </Route >
 
               <Route exact path="/carrito" >

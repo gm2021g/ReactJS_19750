@@ -7,7 +7,7 @@ Consta de varios módulos:
 - Una sección con productos que la Obra Social ofrece a sus socios con descuentos especiales, donde se incluye carrito de compras.
 - Una sección que posee un formulario de contacto para ingresar consultas.
 
-Link con demo del proyecto:  <pendiente>
+Demo del proyecto: ostma-app/public/OSTMA.git
 
 Desarrollado con create-react-app
 Versión Node: v14.16.1

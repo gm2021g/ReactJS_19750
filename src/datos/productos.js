@@ -1,4 +1,4 @@
-export const productos = [
+/*export const productos = [
     {
         id: 1,
         nombre: "Antiparasitario Interno Perros Y Gatos",
@@ -301,3 +301,5 @@ export const productos = [
         stock: 6
     }
 ]
+
+*/

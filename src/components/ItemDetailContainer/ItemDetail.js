@@ -17,25 +17,25 @@ export const ItemDetail = ({ id, nombre, precio, imagen, descripcion, marca, tip
         //lo que se guarda en el carrito
         const newItem = {
             id, nombre, precio, imagen, descripcion, marca, tipo,
-            cantidad
+            cantidad, stock
         }
 
         if (cantidad > 0)
             addToCart(newItem);
     }
 
-    if (nombre === undefined) {
-        return (
-            <>
-                <h1> No se encontraron datos </h1>
-                <div style={{ padding: '1rem' }} >
-                    <button onClick={() => goBack()} variant="secondary" >  Volver </button>
-                    {' '}
-                    <button onClick={() => push("/")} variant="secondary" >  Ir al Home </button>
-                </div>
-            </>
-        );
-    }
+    // if (nombre === undefined) {
+    //     return (
+    //         <>
+    //             <h1> No se encontraron datos </h1>
+    //             <div style={{ padding: '1rem' }} >
+    //                 <button onClick={() => goBack()} variant="secondary" >  Volver </button>
+    //                 {' '}
+    //                 <button onClick={() => push("/")} variant="secondary" >  Ir al Home </button>
+    //             </div>
+    //         </>
+    //     );
+    // }
 
     return (
 
@@ -60,7 +60,7 @@ export const ItemDetail = ({ id, nombre, precio, imagen, descripcion, marca, tip
                 :
                 <>
                     <ItemCount cantidad={cantidad} modify={setCantidad} maximo={stock} />
-                    <button style={{ width: '10rem', margin: "45%" }}
+                    <button style={{ width: '10rem', margin: "46%" }}
                         className="btn btn-success my-2"
                         onClick={handleAgregar}
                     >

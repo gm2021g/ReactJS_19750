@@ -1,11 +1,10 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useState } from 'react'
 
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
-    console.log(carrito)
 
     const addToCart = (item) => {
         setCarrito([...carrito, item]);
@@ -21,8 +20,8 @@ export const CartProvider = ({ children }) => {
         return carrito.reduce((acc, prod) => acc + prod.cantidad, 0)
     }
 
-    const isInCart = (ItemId) => {
-        return carrito.some((prod) => prod.id === ItemId)
+    const isInCart = (itemId) => {
+        return carrito.some((prod) => prod.id === itemId)
         //some retorna true si el objeto existe en el carrito
     }
 
@@ -34,6 +33,15 @@ export const CartProvider = ({ children }) => {
         return carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
     }
 
+    const cambiarCantidad = (itemId, cant) => {
+        const index = carrito.findIndex((prod) => prod.id === itemId)
+        const appendItem = [...carrito];
+        if (cant > 0 && cant <= appendItem[index].stock) {
+            appendItem[index].cantidad = cant;
+            setCarrito(appendItem);
+        }
+    };
+
     return (
         <CartContext.Provider value={{
             carrito,
@@ -42,7 +50,8 @@ export const CartProvider = ({ children }) => {
             calcularCantidad,
             vaciarCarrito,
             isInCart,
-            calcularTotal
+            calcularTotal,
+            cambiarCantidad
         }}   >
             {children}
         </CartContext.Provider>

@@ -17,3 +17,7 @@
 .cardPrecio {
     font-weight: bolder;
 }
+
+.cantidad {
+   width: 10vw;
+}

@@ -1,7 +1,6 @@
-.loader {
+.load {
     height: 25vh;
     width: 25vw;
-    background-color: #f3cd87;
     display: flex;
     justify-content: center;
     align-items: center;

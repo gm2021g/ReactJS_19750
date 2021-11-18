@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import TituloNavBar from '../Títulos/TituloNavBar';
 import { Cart } from './Cart';
 import Logo from './Logo';
 import './NavBar.css';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { UserAuthContext } from '../../context/UserAuthContext';
+
+
 
 export default function NavBar() {
+
+    const { isAuthenticated, setIsAuthenticated } = useContext(UserAuthContext)
+
+    const handleSubmit = () => {
+        setIsAuthenticated(false);
+    }
+
     return (
         <>
             <section id="grillaMenu">
@@ -21,7 +31,6 @@ export default function NavBar() {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav >
                                 <Nav.Link> <NavLink style={{ textDecoration: 'none' }} className={"mr-auto my-2 my-lg-1"} activeClassName={'activeLink'} exact to="/"> Home </NavLink> </Nav.Link>
-                                <Nav.Link> <NavLink style={{ textDecoration: 'none' }} activeClassName={'activeLink'} exact to="/planes"> Planes </NavLink> </Nav.Link>
                                 <NavDropdown title="Productos" id="basic-nav-dropdown">
                                     <NavDropdown.Item> <NavLink style={{ textDecoration: 'none' }} activeClassName={'activeLink'} exact to="/productos/medicamentos"> Medicamentos </NavLink> </NavDropdown.Item>
                                     <NavDropdown.Item> <NavLink style={{ textDecoration: 'none' }} activeClassName={'activeLink'} exact to="/productos/higiene"> Higiene </NavLink> </NavDropdown.Item>
@@ -40,6 +49,10 @@ export default function NavBar() {
                 <div className="areaTres">
                     <Link style={{ textDecoration: 'none' }} exact to="/carrito"> <Cart text='../images/cart.jpg' /> </Link>
                 </div>
+
+
+
+                {!isAuthenticated || <div className="areaCuatro"> <button onClick={handleSubmit} > Salir </button> </div>}
             </section>
 
         </>

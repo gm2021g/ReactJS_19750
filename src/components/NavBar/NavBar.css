@@ -2,7 +2,7 @@
       display: grid;
       grid-template-columns: max-content;
       grid-template-rows: 100%;
-      grid-template-areas: "areaUno areaDos areaTres";
+      grid-template-areas: "areaUno areaDos areaTres areaCuatro";
       justify-items:center;
       align-items: center;
       background-image: linear-gradient(to left, #d0914e, wheat); 
@@ -41,4 +41,4 @@
      font-size: 1.5rem;
      color: white;
      
-  }
+  }  

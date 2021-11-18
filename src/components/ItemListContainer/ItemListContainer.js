@@ -11,11 +11,9 @@ export const ItemListContainer = () => {
     const { loading, setLoading } = useContext(UIContext)
 
     const { categoryId } = useParams()
-    //console.log("categoryId " + categoryId)
 
     useEffect(() => {
         setLoading(true)
-        //  console.log("categoryId " + categoryId)
         const db = getFirestore()
         const productos = (categoryId !== 'todos')
             ? db.collection('productos').where('tipo', '==', categoryId)
@@ -38,43 +36,16 @@ export const ItemListContainer = () => {
 
     }, [categoryId, setLoading])
 
-    // useEffect(async ()=> {
-    //    // mock llamado a la API
-    //     const res = await pedirProductos()
-    //     console.log(res)
-    // }, [])
-
     // render con operador ternario
     return (
+
         <section className="container my-5">
+            <p className="tituloPrincipal"> {categoryId.charAt(0).toUpperCase() + categoryId.slice(1)} </p>
             {
                 loading
                     ? <Loader />
                     : <ItemList productos={items} />
             }
-
         </section>
     )
-
-    // render con early return
-    // if (loading) {
-    //     return <h2>Cargando...</h2>
-    // }
-
-    // return (
-    //     <section className="cointainer my-5">
-    //         <ItemList productos={items}/>
-    //     </section>
-    // )
-
-    // render inline con fragment
-
-    // return (
-    //     <section className="cointainer my-5">
-    //         {loading && <h2>Cargando...</h2>}
-    //         {!loading && <ItemList productos={items}/>}
-    //     </section>
-    // )
-
-
 }

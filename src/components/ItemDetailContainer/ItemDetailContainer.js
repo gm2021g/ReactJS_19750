@@ -15,8 +15,6 @@ export const ItemDetailContainer = () => {
 
     const { itemId } = useParams()
 
-    console.log('*** itemId ' + itemId)
-
     useEffect(() => {
         setLoading(true)
 
@@ -25,11 +23,11 @@ export const ItemDetailContainer = () => {
         const item = productos.doc(itemId)
         item.get()
             .then((doc) => {
+
                 setItem({
                     id: doc.id,
                     ...doc.data()
                 })
-
             })
             .catch(err => console.log(err))
             .finally(() => {
@@ -37,15 +35,6 @@ export const ItemDetailContainer = () => {
             })
 
     }, [itemId, setLoading])
-
-    //return (
-    // <section className="container my-5">
-    //     {  
-    //         loading
-    //             ? <Loader />
-    //             : <ItemDetail {...item} />
-    //     }
-    // </section>)
 
     return (
         <section className="cointainer my-5">

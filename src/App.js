@@ -13,8 +13,15 @@ import { CartProvider } from './context/CartContext';
 import { UIProvider } from './context/UIContext';
 import { Home } from './components/Secciones/Home';
 import { Contacto } from './components/Secciones/Contacto';
+import { Checkout } from './components/Checkout/Checkout';
+import { useContext } from 'react';
+import { UserAuthContext } from './context/UserAuthContext';
+import { UserAuthenticate } from './components/UserAuthenticate/UserAuthenticate';
+
 
 function App() {
+
+  const { isAuthenticated } = useContext(UserAuthContext);
 
   return (
     <>
@@ -26,34 +33,41 @@ function App() {
             <NavBar />
 
             <Switch>
-              <Route exact path="/" >
-                <Home />
-              </Route>
 
-              <Route exact path="/planes" >
-                <h1> Planes </h1>
-              </Route >
+              {isAuthenticated
+                ?
+                <>
+                  <Route exact path="/" >
+                    <Home />
+                  </Route>
 
-              <Route exact path="/productos/:categoryId" >
-                <ItemListContainer />
-              </Route >
+                  <Route exact path="/productos/:categoryId" >
+                    <ItemListContainer />
+                  </Route >
 
-              <Route exact path="/detalle/:itemId" >
-                <ItemDetailContainer />
-              </Route >
+                  <Route exact path="/detalle/:itemId" >
+                    <ItemDetailContainer />
+                  </Route >
 
-              <Route exact path="/contacto" >
-                <Contacto />
-              </Route >
+                  <Route exact path="/contacto" >
+                    <Contacto />
+                  </Route >
 
-              <Route exact path="/carrito" >
-                <CartVista />
-              </Route >
+                  <Route exact path="/carrito" >
+                    <CartVista />
+                  </Route >
 
-              <Route path="*" >
-                <Redirect to="/" />
-              </Route >
+                  <Route exact path="/checkout">
+                    <Checkout />
+                  </Route >
 
+                  <Route path="*" >
+                    <Redirect to="/" />
+                  </Route >
+                </>
+                :
+                <UserAuthenticate />
+              }
             </Switch>
 
           </BrowserRouter>
@@ -61,6 +75,7 @@ function App() {
 
         </CartProvider>
       </UIProvider>
+
     </>
   );
 }

@@ -3,11 +3,9 @@ import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import './CartVista.css';
-import { ItemCount } from '../ItemCount/ItemCount';
-import { ItemDetail } from '../ItemDetailContainer/ItemDetail';
 
 export const CartVista = () => {
-    const { carrito, vaciarCarrito, removeItem, calcularTotal } = useContext(CartContext)
+    const { carrito, vaciarCarrito, removeItem, calcularTotal, cambiarCantidad } = useContext(CartContext)
 
     return (
         <div className="container my-5">
@@ -15,19 +13,19 @@ export const CartVista = () => {
                 carrito.length === 0
                     ?
                     <>
-                        <h3>No hay productos en el Carrito</h3>
+                        <p className="tituloPrincipal">No hay productos en el Carrito</p>
                         <Link to="/productos/todos" className="btn btn-success"> Ir a Productos </Link>
                     </>
                     :
                     <>
-                        <h3> Carrito de Compras </h3>
+                        <p className="tituloPrincipal">Carrito de Compras</p>
                         <Card border="warning" style={{ width: '50rem' }}>
                             <Card.Body>
                                 <Card.Text>
 
                                     {
                                         carrito.map((prod) => (
-                                            <div>
+                                            <div key={prod.id}>
                                                 <Card.Header className="cardHeader">  {prod.nombre}  </Card.Header>
                                                 <br />
 
@@ -35,7 +33,18 @@ export const CartVista = () => {
                                                 <br />
 
                                                 <p>Precio unitario: $ {prod.precio} </p>
-                                                <p>Cantidad: {prod.cantidad}</p>
+
+                                                <div className="my-4">
+                                                    <label className="control-label col-sm-2"> Cantidad </label>
+                                                    <input
+                                                        className="form-control"
+                                                        type="number"
+                                                        placeholder="cantidad"
+                                                        name="cantidad"
+                                                        value={prod.cantidad}
+                                                        onChange={(e) => cambiarCantidad(prod.id, Number(e.target.value))}
+                                                    />
+                                                </div>
 
                                                 <Card.Subtitle className="cardPrecio my-4" >Precio Total: $ {prod.precio * prod.cantidad}</Card.Subtitle>
 
@@ -54,10 +63,9 @@ export const CartVista = () => {
                                             Vaciar Carrito
                                         </button>
 
-                                        <button className="btn btn-warning my-2 mx-3" >
+                                        <Link className="btn btn-success" to="/checkout" >
                                             Ir a Pagar
-                                        </button>
-
+                                        </Link>
 
                                         <Link className="btn btn-success my-2 mx-3" to="/productos/todos">
                                             Seguir comprando
@@ -70,6 +78,7 @@ export const CartVista = () => {
                     </>
             }
         </div >
+
     )
 }
 

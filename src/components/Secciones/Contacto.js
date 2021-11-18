@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Swal from 'sweetalert2'
 
 export const Contacto = () => {
 
@@ -10,6 +11,22 @@ export const Contacto = () => {
         comentarios: ''
     })
 
+    const valida = () => {
+        if (values.nombre && values.apellido && values.email && values.comentarios) {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Consulta registrada!',
+                text: 'En breve nos contactaremos'
+            })
+        }
+        else {
+            Swal.fire({
+                icon: 'error',
+                title: '¡Debe cargar campos obligatorios!'
+            })
+        }
+    }
+
     const handleInputChange = (e) => {
         setValues({
             ...values,
@@ -19,14 +36,12 @@ export const Contacto = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        console.log(values)
     }
 
     return (
         <div className="container my-5">
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}  >
                 <p className="tituloPrincipal">Completa el formulario y te contactaremos a la brevedad</p>
 
                 <div className="my-4">
@@ -91,8 +106,15 @@ export const Contacto = () => {
                 </div>
 
                 <div>
-                    <button className="btn btn-warning" type="submit">Enviar</button>
+                    <button
+                        className="btn btn-warning"
+                        name="enviar"
+                        onClick={() => valida()}
+                    >
+                        Enviar
+                    </button>
                 </div>
+
             </form >
         </div >
     )
